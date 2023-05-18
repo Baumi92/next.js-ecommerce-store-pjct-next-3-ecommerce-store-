@@ -1,3 +1,5 @@
+import styles from './page.module.scss';
+
 export default function WearablesPage() {
   return (
     <main>
@@ -5,10 +7,12 @@ export default function WearablesPage() {
       <nav>
         <ul>
           <li>
-            <a href="jacket"> Jacket</a>
-            <a href="shoes">Shoes </a>
-            <a href="sweater">Sweater </a>
-            <a href="trouser">Trouser </a>
+            <div className={styles.topnav}>
+              <a href="jacket"> Jacket</a>
+              <a href="shoes">Shoes </a>
+              <a href="sweater">Sweater </a>
+              <a href="trouser">Trouser </a>
+            </div>
           </li>
         </ul>
       </nav>
