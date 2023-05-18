@@ -1,7 +1,7 @@
 export default function AboutPage() {
   return (
     <main>
-      <div> Hallo pussy</div>
+      <div> About Company</div>
     </main>
   );
 }
