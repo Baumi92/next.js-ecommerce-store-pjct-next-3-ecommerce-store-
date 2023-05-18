@@ -1,6 +1,6 @@
-import './globals.css';
+import './globals.scss';
 import { Inter } from 'next/font/google';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,9 +20,10 @@ export default function RootLayout({ children }) {
                 <a className={styles.active} href="#home">
                   Home
                 </a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <a href="wearables">Wearables</a>
+                <a href="news">News</a>
+                <a href="contact">Contact</a>
+                <a href="about">About</a>
               </div>
             </li>
           </ul>

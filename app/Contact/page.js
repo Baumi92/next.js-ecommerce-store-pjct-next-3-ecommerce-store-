@@ -1,7 +1,7 @@
 export default function ContactPage() {
   return (
     <main>
-      <div> Hallo pussy</div>
+      <div> How to contact us</div>
     </main>
   );
 }
