@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <ul>
             <li>
               <div className={styles.topnav}>
-                <a className={styles.active} href="home">
+                <a className={styles.active} href="/">
                   Home
                 </a>
                 <a href="wearables">Wearables</a>

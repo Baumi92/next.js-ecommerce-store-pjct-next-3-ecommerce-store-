@@ -7,7 +7,10 @@ export default function HomePage() {
       <p className={styles.p}>
         wear your wearables everywhere you want with our super system setup
       </p>
-      <div>Grias di hallo</div>
+      <div>
+        <img className {styles.center} src="Mountain.jpg" alt="Showing Mountain"  />
+      </div>
+      <div>Hello world</div>
     </main>
   );
 }
