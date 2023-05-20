@@ -3,7 +3,6 @@ import styles from './page.module.scss';
 export default function WearablesPage() {
   return (
     <main>
-      <div> Wearables</div>
       <nav>
         <ul>
           <li>
