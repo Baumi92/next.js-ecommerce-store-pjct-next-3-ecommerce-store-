@@ -1,0 +1,18 @@
+.section {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 56px;
+}
+
+.section p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 480px) {
+  .section p {
+    font-size: 18px;
+  }
+}
