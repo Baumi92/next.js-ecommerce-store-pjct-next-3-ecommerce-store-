@@ -7,7 +7,7 @@ export default function HomePage() {
       <p className={styles.p}>"WildGear: Embrace the Wild, Equip Yourself"</p>
       <section className={styles.section}>
         <div>
-          <img src="Mountain.jpg" alt="Showing Mountain" />
+          <img src="/Mountainview.jpg" alt="Showing Mountain" />
         </div>
       </section>
       <div className={styles.h1}>Our Products</div>
