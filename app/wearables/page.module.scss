@@ -4,6 +4,7 @@
   overflow: hidden;
   padding-top: 112px;
   bottom: 12px;
+  gap: 56px;
 }
 
 /* Style the links inside the navigation bar */
@@ -28,4 +29,7 @@
 .topnav a.active {
   background-color: #1e201f;
   color: rgb(241, 232, 232);
+}
+.picture {
+  text-align: center;
 }
