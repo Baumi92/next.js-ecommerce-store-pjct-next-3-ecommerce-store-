@@ -1,5 +1,11 @@
 import Image from 'next/image';
+import GenerateButton from './GenerateButton';
 import styles from './page.module.scss';
+
+export const metadata = {
+  title: 'Home page',
+  description: 'My Homepage',
+};
 
 export default function HomePage() {
   return (
@@ -21,22 +27,26 @@ export default function HomePage() {
         <section>
           <div className={styles.picture}>
             <Image
-              src="/Berge.jpg"
+              src="/Fire.jpg"
               alt="showing desert"
-              width="800"
-              height={600}
+              width="530"
+              height="700"
             />
           </div>
-          /br /br
+
           <div className={styles.h1}>Our Products</div>
           <div className={styles.picture}>
             <img src="/shoes.png" alt="showing shoes" height="400" />
-            /br
+
+            <GenerateButton />
             <img src="/Jacket.png" alt="showing jacket" height="400" />
-            /br
+
+            <GenerateButton />
             <img src="/trousers.png" alt="showing trousers" height="400" />
-            /br
+
+            <GenerateButton />
             <img src="/sweater.png" alt="showing sweater" height="400" />
+            <GenerateButton />
           </div>
         </section>
       </main>

@@ -1,5 +1,10 @@
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Trouser page',
+  description: 'Trousers',
+};
+
 export default function TrouserPage() {
   return (
     <main>
