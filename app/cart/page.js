@@ -1,16 +1,27 @@
+import Image from 'next/image';
 import styles from './page.module.scss';
 
 export default function ContactPage() {
   return (
-    <main>
-      <div className={styles.h1}> Cart </div>
-      <div className={styles.h1}>
-        <img src="/Riverview.jpg" alt="showing River" height="500" />
+    <>
+      <div
+        style={{
+          zIndex: '-1',
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+        }}
+      >
+        <Image src="/Riverview.jpg" alt="showing River" layout="fill" />
       </div>
 
-      <div className={styles.adress}>
-        <button>Checkout</button>{' '}
-      </div>
-    </main>
+      <main>
+        <div className={styles.h1}> Cart </div>
+
+        <div className={styles.adress}>
+          <button>Checkout</button>{' '}
+        </div>
+      </main>
+    </>
   );
 }
