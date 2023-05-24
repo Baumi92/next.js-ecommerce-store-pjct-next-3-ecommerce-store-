@@ -33,7 +33,7 @@ export default function ProductPage() {
                 src={`/images/${product.name}.png`}
                 width={500}
                 height={500}
-                alt="Products"
+                alt="outdoorwearables"
               />
             </div>
           );
