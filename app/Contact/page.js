@@ -18,7 +18,8 @@ export default function ContactPage() {
         <div className={styles.h1}> How to contact us</div>
 
         <div className={styles.adress}>
-          Contact Us WildGear 123 Adventure Avenue Vienna, 1010 Austria
+          Contact Us WildGear 123 Adventure Avenue Vienna, 1010 Austria /br
+          E-mail buxdiehude@gmail.com /br Phone: 06646666666
         </div>
       </main>
     </>

@@ -1,13 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { products } from '../../database/product';
 import styles from './page.module.scss';
-
-export const products = [
-  { id: 1, name: 'shoe', type: 'cat', accessory: 'rat' },
-  { id: 2, name: 'trouser', type: 'dog', accessory: 'biscuit' },
-  { id: 3, name: 'jacket', type: 'trashpanda', accessory: 'candy' },
-  { id: 4, name: 'sweater', type: 'snake', accessory: 'band' },
-];
 
 export default function ProductPage() {
   return (
@@ -24,6 +18,7 @@ export default function ProductPage() {
       </div>
 
       <main className={styles.picture}>
+        <h1>Products</h1>
         {products.map((product) => {
           return (
             <div key={`product-div-${product.id}`}>
