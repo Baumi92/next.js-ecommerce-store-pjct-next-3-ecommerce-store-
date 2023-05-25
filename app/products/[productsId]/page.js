@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { product } from '../../../database';
 
 export default function ProductIDPage(params) {
   const singleProduct = product(product.find(product));

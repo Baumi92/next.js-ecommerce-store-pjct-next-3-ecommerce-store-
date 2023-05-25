@@ -34,7 +34,8 @@ export default function HomePage() {
             />
           </div>
 
-          <div className={styles.h1}>Our Products</div>
+          <h2 className={styles.h1}>Our Products</h2>
+          <p> Here should be a Text </p>
           <div className={styles.picture}>
             <Link href="/products">
               <img src="/shoe.png" alt="showing shoes" height="400" />
