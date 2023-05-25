@@ -1,6 +1,7 @@
 .picture {
   text-align: center;
   padding-top: 250px;
+  justify-content: space-between;
 }
 .p {
   font-size: large;
@@ -12,39 +13,4 @@
   text-align: center;
   padding-top: 56px;
   color: #eefa06;
-}
-
-.topnav {
-  text-align: center;
-  overflow: hidden;
-  padding-top: 120px;
-  right: 10px;
-  left: 10px;
-  gap: 24px;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: center;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 5px 9px;
-  text-decoration: none;
-  font-size: 21px;
-  background-color: #1261c0;
-  border-radius: 56px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #f6f1f1;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  color: rgb(241, 232, 232);
-}
-.topnavr {
-  float: right;
 }

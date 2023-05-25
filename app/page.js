@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import GenerateButton from './GenerateButton';
+import Link from 'next/link';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -36,17 +36,18 @@ export default function HomePage() {
 
           <div className={styles.h1}>Our Products</div>
           <div className={styles.picture}>
-            <img src="/shoes.png" alt="showing shoes" height="400" />
-
-            <GenerateButton />
-            <img src="/Jacket.png" alt="showing jacket" height="400" />
-
-            <GenerateButton />
-            <img src="/trousers.png" alt="showing trousers" height="400" />
-
-            <GenerateButton />
-            <img src="/sweater.png" alt="showing sweater" height="400" />
-            <GenerateButton />
+            <Link href="/products">
+              <img src="/shoe.png" alt="showing shoes" height="400" />
+            </Link>
+            <Link href="/products">
+              <img src="/Jacket.png" alt="showing jacket" height="400" />
+            </Link>
+            <Link href="/products">
+              <img src="/trouser.png" alt="showing trousers" height="400" />
+            </Link>
+            <Link href="/products">
+              <img src="/sweater.png" alt="showing sweater" height="400" />
+            </Link>
           </div>
         </section>
       </main>

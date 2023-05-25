@@ -10,7 +10,7 @@ export default function TrouserPage() {
     <main>
       <div className={styles.h1}> Trouser</div>
       <div className={styles.picture}>
-        <img src="/trousers.png" alt="showing trousers" height="500" />
+        <img src="/trouser.png" alt="showing trousers" height="500" />
       </div>
     </main>
   );
