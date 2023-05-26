@@ -5,6 +5,7 @@ export const products = [
     type: 'cat',
     accessory: 'rat',
     img: '/public/shoe.png',
+    alt: 'Clothes',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const products = [
     type: 'dog',
     accessory: 'biscuit',
     img: '/public/trouser.png',
+    alt: 'Clothes',
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const products = [
     type: 'trashpanda',
     accessory: 'candy',
     img: '/public/jacket.png',
+    alt: 'Clothes',
   },
   {
     id: 4,
@@ -26,5 +29,6 @@ export const products = [
     type: 'snake',
     accessory: 'band',
     img: '/public/sweater.png',
+    alt: 'Clothes',
   },
 ];

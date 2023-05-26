@@ -29,8 +29,3 @@
 .button :not(:last-child) {
   border-bottom: none; /* Prevent double borders */
 }
-
-/* Add a background color on hover */
-.button :hover {
-  background-color: #e0e9e0;
-}

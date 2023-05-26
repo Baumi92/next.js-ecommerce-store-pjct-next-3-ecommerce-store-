@@ -10,6 +10,15 @@ export const metadata = {
   description: 'My shoe',
 };
 
+const cartService = {
+  addToCart: (product) => {
+    // Simulate adding the product to the cart
+    console.log(
+      `Adding ${product.name} to the cart with quantity ${product.quantity}`,
+    );
+  },
+};
+
 export default function ShoePage() {
   const [quantity, setQuantity] = useState(1);
   const [isInCart, setIsInCart] = useState(false);
@@ -52,6 +61,13 @@ export default function ShoePage() {
 
     setIsInCart(true);
     alert('Product added to cart!');
+  };
+
+  const product = {
+    id: 1, // Replace with the actual product ID
+    name: 'Shoe', // Replace with the actual product name
+    price: 99.0, // Replace with the actual product price
+    quantity: quantity,
   };
 
   const handleRemoveFromCart = () => {
@@ -101,15 +117,17 @@ export default function ShoePage() {
               >
                 Add to Cart
               </button>
-              <Link href="/cart">
-                <button>Go to Cart</button>
-              </Link>
+              <div>
+                <Link href="/cart">
+                  <button>Go to Cart</button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.h2}>
-          <h2> Key Facts</h2>
-          <p> Here should be a Text </p>
+          <div className={styles.h2}>
+            <h2> Key Facts</h2>
+            <p> Here should be a Text </p>
+          </div>
         </div>
       </main>
     </>
