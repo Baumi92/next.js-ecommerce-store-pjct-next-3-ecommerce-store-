@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './page.module.scss';
 
 export default function CartPage() {
-  const CartPage = () => {
+  const ShoePage = () => {
     const cartItems = [
       {
         id: 1,
@@ -30,23 +30,20 @@ export default function CartPage() {
         </div>
 
         <main>
-          <div className={styles.Cart}>
+          <div>
             <h1>Cart</h1>
-            {cartItems.length > 0 ? (
-              <ul>
-                {cartItems.map((item) => (
-                  <li key={`cart-item-${item.id}`}>
-                    <div>
-                      <span>{item.name}</span>
-                      <span>{item.price}</span>
-                      <span>{item.quantity}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>Your cart is empty.</p>
-            )}
+            <ul>
+              {cartItems.map((item) => (
+                <li key={`cart-item-${item.id}`}>
+                  <div>
+                    <span>{item.name}</span>
+                    <span>{item.price}</span>
+                    <span>{item.quantity}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            : (<p>Your cart is empty.</p>)
           </div>
 
           <div className={styles.adress}>
