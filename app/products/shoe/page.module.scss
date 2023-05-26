@@ -16,6 +16,21 @@
 }
 
 .button {
-  display: block;
-  float: left;
+  background-color: #111212; /* Green background */
+  border: 2px solid green; /* Green border */
+  color: #eefa06; /* White text */
+  padding: 10px 12px 10px; /* Some padding */
+  width: 50%; /* Set a width if needed */
+  cursor: pointer; /* Pointer/hand icon */
+  display: block; /* Make the buttons appear below each other */
+  text-align: center;
+}
+
+.button :not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.button :hover {
+  background-color: #e0e9e0;
 }

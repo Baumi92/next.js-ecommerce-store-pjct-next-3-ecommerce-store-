@@ -18,7 +18,7 @@ export default function ProductPage() {
       </div>
 
       <main className={styles.picture}>
-        <h1>Products</h1>
+        <h1 className={styles.h1}>Products</h1>
         {products.map((product) => {
           return (
             <div key={`product-div-${product.id}`}>

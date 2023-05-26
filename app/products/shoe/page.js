@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import styles from './page.module.scss';
 
@@ -12,11 +13,31 @@ export const metadata = {
 export default function ShoePage() {
   const [quantity, setQuantity] = useState(1);
   const [isInCart, setIsInCart] = useState(false);
+  const [price, setPrice] = useState(99.0);
 
   const handleQuantityChange = (event) => {
-    const newQuantity = parseInt(event.target.value);
+    let newQuantity = parseInt(event.target.value);
     if (newQuantity >= 1) {
       setQuantity(newQuantity);
+    }
+    if (isNaN(newQuantity) || newQuantity < 1) {
+      newQuantity = 1;
+    }
+    if (newQuantity < 1) {
+      newQuantity = 1;
+    }
+    setQuantity(newQuantity);
+    setPrice(newQuantity * 99.0);
+  };
+  const handleIncreaseQuantity = () => {
+    setQuantity(quantity + 1);
+    setPrice((quantity + 1) * 99.0);
+  };
+
+  const handleDecreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+      setPrice((quantity - 1) * 99.0);
     }
   };
 
@@ -62,16 +83,29 @@ export default function ShoePage() {
             alt="Product Shoe"
             height="500"
           />
-          <span data-test-id="product-price">99.99 €</span>
-
-          <input
-            type="number"
-            data-test-id="product-quantity"
-            value="1"
-            min="1"
-          />
-          <button className={styles.button] onClick={handleRemoveFromCart}>Remove from Cart</button>
-          <button data-test-id="product-add-to-cart">Add to Cart</button>
+          <div className={styles.button}>
+            <span data-test-id="product-price ">{price}</span>
+            <div>
+              <input
+                onClick={handleQuantityChange}
+                type="number"
+                data-test-id="product-quantity"
+                value={quantity}
+                min="1"
+                onChange={handleQuantityChange}
+              />
+              <button onClick={handleRemoveFromCart}>Remove from Cart</button>
+              <button
+                onClick={handleAddToCart}
+                data-test-id="product-add-to-cart"
+              >
+                Add to Cart
+              </button>
+              <Link href="/cart">
+                <button>Go to Cart</button>
+              </Link>
+            </div>
+          </div>
         </div>
         <div className={styles.h2}>
           <h2> Key Facts</h2>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 
-export default function ContactPage() {
+export default function CartPage() {
   return (
     <>
       <div
@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div className={styles.h1}> Cart </div>
 
         <div className={styles.adress}>
-          <button>Checkout</button>{' '}
+          <button>Checkout</button>
         </div>
       </main>
     </>
