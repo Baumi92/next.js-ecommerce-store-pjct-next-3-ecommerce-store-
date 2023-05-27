@@ -14,7 +14,6 @@ export default function CartPage() {
       { id: 2, name: 'Jacket', price: 49.0, quantity: 1 },
       { id: 3, name: 'Trouser', price: 49.0, quantity: 1 },
       { id: 4, name: 'Sweater', price: 49.0, quantity: 1 },
-      // Add more items as needed
     ];
     return (
       <>

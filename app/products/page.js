@@ -22,13 +22,11 @@ export default function ProductPage() {
         {products.map((product) => {
           return (
             <div key={`product-div-${product.id}`}>
-              <Link href={`/products/${product.name}`}>{product.name}</Link>
-
+              <Link href={`/products/${product.name}`}>{product.type}</Link>
               <Image
                 src={`/images/${product.name}.png`}
                 width={300}
                 height={300}
-                alt="Products"
               />
             </div>
           );

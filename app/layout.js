@@ -21,12 +21,12 @@ export default function RootLayout({ children }) {
                 <a className={styles.active} href="/">
                   Home
                 </a>
-                <Link href="products">Products</Link>
-                <Link href="news">News</Link>
-                <Link href="contact">Contact</Link>
-                <Link href="about">About</Link>
+                <Link href="/products">Products</Link>
+                <Link href="/news">News</Link>
+                <Link href="/contact">Contact</Link>
+                <Link href="/about">About</Link>
                 <div className={styles.topnavr}>
-                  <Link href="cart">Cart</Link>
+                  <Link href="/cart">Cart</Link>
                 </div>
               </div>
             </li>

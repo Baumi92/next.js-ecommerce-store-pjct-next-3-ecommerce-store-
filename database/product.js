@@ -1,8 +1,12 @@
+import fs from 'node:fs';
+
+fs.readFile('../app/page.js', () => {});
+
 export const products = [
   {
-    id: 1,
+    productId: 1,
     name: 'shoe',
-    type: 'cat',
+    type: 'shoes',
     accessory: 'rat',
     img: '/public/shoe.png',
     alt: 'Clothes',
@@ -10,7 +14,7 @@ export const products = [
   {
     id: 2,
     name: 'trouser',
-    type: 'dog',
+    type: 'trousers',
     accessory: 'biscuit',
     img: '/public/trouser.png',
     alt: 'Clothes',
@@ -18,7 +22,7 @@ export const products = [
   {
     id: 3,
     name: 'jacket',
-    type: 'trashpanda',
+    type: 'jackets',
     accessory: 'candy',
     img: '/public/jacket.png',
     alt: 'Clothes',
@@ -26,9 +30,13 @@ export const products = [
   {
     id: 4,
     name: 'sweater',
-    type: 'snake',
+    type: 'sweaters',
     accessory: 'band',
     img: '/public/sweater.png',
     alt: 'Clothes',
   },
 ];
+
+export function getProductById(id) {
+  return products.find((product) => product.name === id);
+}
