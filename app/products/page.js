@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../../database/product';
+import Shuffle from '../../public/Shuffle.png';
 import styles from './page.module.scss';
 
 export default function ProductPage() {
@@ -24,7 +25,7 @@ export default function ProductPage() {
             <div key={`products-div-${product.id}`}>
               <Link href={`/products/${product.name}`}>{product.type}</Link>
               <Image
-                src={`/public/${product.name}.png/.jpg`}
+                src={`/images/${product.name}.png`}
                 width={300}
                 height={300}
               />

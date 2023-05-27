@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Shuffle from '../public/Shuffle.png';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -39,7 +40,7 @@ export default function HomePage() {
           <div className={styles.picture}>
             <Link href="/products">
               <Image
-                src="/schuhe.jpg"
+                src="/Shuffle.png"
                 alt="showing shoes"
                 height="400"
                 width="400"

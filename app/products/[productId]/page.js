@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export default function ProductByIdPage({ params }) {
   console.log(params);
-  const singleProduct = getProductById(params.product);
+  const singleProduct = getProductById(params.productId);
 
   console.log(singleProduct);
 
@@ -29,11 +29,11 @@ export default function ProductByIdPage({ params }) {
       <main>
         <h1> {singleProduct.name}</h1>
         <Image
-          src={`/public/${singleProduct.name}.png/.jpg`}
+          src={`/images/${singleProduct.name}.png`}
           width={300}
           height={300}
         />
-        This is a {singleProduct.type} product page {singleProduct.object}
+        This is a {singleProduct.type} product page {singleProduct.accessory}
         <div>
           <ShoePage />
         </div>

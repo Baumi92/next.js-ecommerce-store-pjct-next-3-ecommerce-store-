@@ -8,7 +8,7 @@ export const products = [
     name: 'Shuffle',
     type: 'Shoe',
     accessory: 'rat',
-    img: '/public/schuhe.jpg',
+    img: '/images/Shuffle.png',
     alt: 'Clothes',
   },
   {
@@ -16,7 +16,7 @@ export const products = [
     name: 'Truls',
     type: 'trouser',
     accessory: 'biscuit',
-    img: '/public/Truls.png',
+    img: '/images/Truls.png',
     alt: 'Clothes',
   },
   {
@@ -24,7 +24,7 @@ export const products = [
     name: 'Jack',
     type: 'jacket',
     accessory: 'candy',
-    img: '/public/Jack.png',
+    img: '/images/Jack.png',
     alt: 'Clothes',
   },
   {
@@ -32,11 +32,11 @@ export const products = [
     name: 'Swat',
     type: 'sweaters',
     accessory: 'band',
-    img: '/public/Blitz.png',
+    img: '/images/Blitz.png',
     alt: 'Clothes',
   },
 ];
 
-export function getProductById(name) {
-  return products.find((product) => product.name === name);
+export function getProductById(id) {
+  return products.find((product) => product.id === id);
 }
