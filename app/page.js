@@ -38,16 +38,36 @@ export default function HomePage() {
           <p> Here should be a Text </p>
           <div className={styles.picture}>
             <Link href="/products">
-              <img src="/shoe.png" alt="showing shoes" height="400" />
+              <Image
+                src="/schuhe.jpg"
+                alt="showing shoes"
+                height="400"
+                width="400"
+              />
             </Link>
             <Link href="/products">
-              <img src="/Jacket.png" alt="showing jacket" height="400" />
+              <Image
+                src="/Jack.png"
+                alt="showing jacket"
+                height="400"
+                width="400"
+              />
             </Link>
             <Link href="/products">
-              <img src="/trouser.png" alt="showing trousers" height="400" />
+              <img
+                src="/Truls.png"
+                alt="showing trousers"
+                height="400"
+                width={400}
+              />
             </Link>
             <Link href="/products">
-              <img src="/sweater.png" alt="showing sweater" height="400" />
+              <Image
+                src="/Swat.png"
+                alt="showing sweater"
+                height="400"
+                width={400}
+              />
             </Link>
           </div>
         </section>

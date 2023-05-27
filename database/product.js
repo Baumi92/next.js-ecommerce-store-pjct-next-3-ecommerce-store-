@@ -4,39 +4,39 @@ fs.readFile('../app/page.js', () => {});
 
 export const products = [
   {
-    productId: 1,
-    name: 'shoe',
-    type: 'shoes',
+    id: 1,
+    name: 'Shuffle',
+    type: 'Shoe',
     accessory: 'rat',
-    img: '/public/shoe.png',
+    img: '/public/schuhe.jpg',
     alt: 'Clothes',
   },
   {
     id: 2,
-    name: 'trouser',
-    type: 'trousers',
+    name: 'Truls',
+    type: 'trouser',
     accessory: 'biscuit',
-    img: '/public/trouser.png',
+    img: '/public/Truls.png',
     alt: 'Clothes',
   },
   {
     id: 3,
-    name: 'jacket',
-    type: 'jackets',
+    name: 'Jack',
+    type: 'jacket',
     accessory: 'candy',
-    img: '/public/jacket.png',
+    img: '/public/Jack.png',
     alt: 'Clothes',
   },
   {
     id: 4,
-    name: 'sweater',
+    name: 'Swat',
     type: 'sweaters',
     accessory: 'band',
-    img: '/public/sweater.png',
+    img: '/public/Blitz.png',
     alt: 'Clothes',
   },
 ];
 
-export function getProductById(id) {
-  return products.find((product) => product.name === id);
+export function getProductById(name) {
+  return products.find((product) => product.name === name);
 }

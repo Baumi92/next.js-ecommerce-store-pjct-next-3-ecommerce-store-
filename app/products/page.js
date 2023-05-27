@@ -21,10 +21,10 @@ export default function ProductPage() {
         <h1 className={styles.h1}>Products</h1>
         {products.map((product) => {
           return (
-            <div key={`product-div-${product.id}`}>
+            <div key={`products-div-${product.id}`}>
               <Link href={`/products/${product.name}`}>{product.type}</Link>
               <Image
-                src={`/images/${product.name}.png`}
+                src={`/public/${product.name}.png/.jpg`}
                 width={300}
                 height={300}
               />
