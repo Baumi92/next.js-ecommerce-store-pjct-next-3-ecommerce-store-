@@ -7,7 +7,7 @@ export const products = [
     id: 1,
     name: 'Shuffle',
     type: 'Shoe',
-    accessory: 'rat',
+    accessory: 'clothes',
     img: '/images/Shuffle.png',
     alt: 'Clothes',
   },
@@ -37,6 +37,6 @@ export const products = [
   },
 ];
 
-export function getProductById(id) {
-  return products.find((product) => product.id === id);
+export function getProductById(name) {
+  return products.find((product) => product.id === name);
 }

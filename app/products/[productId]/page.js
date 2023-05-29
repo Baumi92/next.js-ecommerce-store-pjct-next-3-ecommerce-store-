@@ -1,5 +1,5 @@
+import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/product';
 import ShoePage from './page';
 
@@ -7,6 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export default function ProductByIdPage({ params }) {
   console.log(params);
+
   const singleProduct = getProductById(params.productId);
 
   console.log(singleProduct);
