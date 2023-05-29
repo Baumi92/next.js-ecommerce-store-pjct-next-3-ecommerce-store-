@@ -39,7 +39,7 @@ export default function HomePage() {
           <div className={styles.picture}>
             <Link href="/products">
               <Image
-                src="/shoe.png"
+                src="/images/shoe.png"
                 alt="showing shoes"
                 height="400"
                 width="400"
@@ -47,7 +47,7 @@ export default function HomePage() {
             </Link>
             <Link href="/products">
               <Image
-                src="/jacket.png"
+                src="/images/jacket.png"
                 alt="showing jacket"
                 height="400"
                 width="400"
@@ -55,7 +55,7 @@ export default function HomePage() {
             </Link>
             <Link href="/products">
               <img
-                src="/trouser.png"
+                src="/images/trouser.png"
                 alt="showing trousers"
                 height="400"
                 width={400}
@@ -63,7 +63,7 @@ export default function HomePage() {
             </Link>
             <Link href="/products">
               <Image
-                src="/sweater.png"
+                src="/images/sweater.png"
                 alt="showing sweater"
                 height="400"
                 width={400}

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { products } from '../../database/product';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -7,40 +8,6 @@ export const metadata = {
   description: 'My favorite products',
 };
 
-const products = [
-  {
-    id: 1,
-    name: 'Shuffle',
-    type: 'Shoe',
-    accessory: 'clothes',
-    img: '/images/Shuffle.png',
-    alt: 'Clothes',
-  },
-  {
-    id: 2,
-    name: 'Truls',
-    type: 'trouser',
-    accessory: 'biscuit',
-    img: '/images/Truls.png',
-    alt: 'Clothes',
-  },
-  {
-    id: 3,
-    name: 'Jack',
-    type: 'jacket',
-    accessory: 'candy',
-    img: '/images/Jack.png',
-    alt: 'Clothes',
-  },
-  {
-    id: 4,
-    name: 'Swat',
-    type: 'sweaters',
-    accessory: 'band',
-    img: '/images/Blitz.png',
-    alt: 'Clothes',
-  },
-];
 export default function ProductPage() {
   return (
     <>

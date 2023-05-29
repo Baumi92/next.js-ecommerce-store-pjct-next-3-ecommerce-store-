@@ -92,7 +92,7 @@ export default function ShoePage() {
         <h1 className={styles.h1}> Shoes</h1>
         <div className={styles.picture}>
           <img
-            src="/shoe.png"
+            src="/images/shoe.png"
             data-test-id="product-image"
             alt="Product Shoe"
             height="500"

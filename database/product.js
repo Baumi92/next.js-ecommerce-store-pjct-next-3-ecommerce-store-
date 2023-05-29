@@ -6,7 +6,7 @@ export const products = [
   {
     id: 1,
     name: 'shoe',
-    type: 'Shoe',
+    type: 'Shoes',
     accessory: 'clothes',
     img: '/images/shoe.png',
     alt: 'Clothes',
@@ -14,7 +14,7 @@ export const products = [
   {
     id: 2,
     name: 'trouser',
-    type: 'trouser',
+    type: 'trousers',
     accessory: 'biscuit',
     img: '/images/trouser.png',
     alt: 'Clothes',
@@ -22,7 +22,7 @@ export const products = [
   {
     id: 3,
     name: 'jacket',
-    type: 'jacket',
+    type: 'jackets',
     accessory: 'candy',
     img: '/images/jacket.png',
     alt: 'Clothes',
@@ -30,7 +30,7 @@ export const products = [
   {
     id: 4,
     name: 'sweater',
-    type: 'sweater',
+    type: 'sweaters',
     accessory: 'band',
     img: '/images/sweater.png',
     alt: 'Clothes',
