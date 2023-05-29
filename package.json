@@ -11,6 +11,7 @@
   "dependencies": {
     "ley": "^0.8.1",
     "next": "13.4.4",
+    "next.js-ecommerce-store-pjct-next-3-ecommerce-store-": "link:",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.62.1",

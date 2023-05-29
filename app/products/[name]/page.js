@@ -1,14 +1,13 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
 import { getProductById } from '../../../database/product';
-import ShoePage from './page';
 
 export const dynamic = 'force-dynamic';
 
 export default function ProductByIdPage({ params }) {
-  console.log(params);
+  
 
-  const singleProduct = getProductById(params.productId);
+  const singleProduct = getProductById(params.productById);
 
   console.log(singleProduct);
 
@@ -35,9 +34,6 @@ export default function ProductByIdPage({ params }) {
           height={300}
         />
         This is a {singleProduct.type} product page {singleProduct.accessory}
-        <div>
-          <ShoePage />
-        </div>
       </main>
     </>
   );
