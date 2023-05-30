@@ -18,7 +18,7 @@ export default function HomePage() {
           height: '100vh',
         }}
       >
-        <Image src="/Mountainview.jpg" alt="mountainview" layout="fill" />
+        <Image src="/Mountainview.jpg" alt="mountainview" fill />
       </div>
       <main>
         <h1 className={styles.h1}> Wild Gear</h1>
