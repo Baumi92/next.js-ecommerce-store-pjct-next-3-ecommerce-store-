@@ -1,8 +1,8 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import styles from './Quantity.module.scss';
 
 export const metadata = {
   title: 'Shoe Page',

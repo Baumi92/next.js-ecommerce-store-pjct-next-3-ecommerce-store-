@@ -17,3 +17,16 @@
   padding-top: 56px;
   color: #eefa06;
 }
+
+.column {
+  float: left;
+  width: 33, 33%;
+  padding: 56px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: '';
+  clear: both;
+  display: table;
+}

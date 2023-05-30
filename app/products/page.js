@@ -22,17 +22,21 @@ export default function ProductPage() {
         <Image src="/riverview.jpg" alt="showing river" layout="fill" />
       </div>
 
-      <main className={styles.picture}>
+      <main>
         <h1 className={styles.h1}>Products</h1>
         {products.map((product) => {
           return (
-            <div key={`product-div-${product.id}`}>
+            <div className={styles.column} key={`product-div-${product.id}`}>
               <Link href={`/products/${product.name}`}>{product.name}</Link>
               <Image
                 src={`/images/${product.name}.png`}
                 width={300}
                 height={300}
               />
+              <div>
+                <span>Productprize</span>
+                <p> Hello here should be a text</p>
+              </div>
             </div>
           );
         })}
