@@ -34,7 +34,7 @@ export default function ProductPage() {
                 height={300}
               />
               <div>
-                <span>Productprize</span>
+                <span>Product Price</span>
                 <p> Hello here should be a text</p>
               </div>
             </div>
