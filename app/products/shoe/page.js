@@ -116,8 +116,14 @@ export default function ShoePage() {
                 Add to Cart
               </button>
               <div>
-                <Link href="/cart">
+                <Link href="/products/cart">
                   <button>Go to Cart</button>
+                </Link>
+              </div>
+              <div>
+                {' '}
+                <Link href="/products/thankyou">
+                  <button>thank you</button>
                 </Link>
               </div>
             </div>

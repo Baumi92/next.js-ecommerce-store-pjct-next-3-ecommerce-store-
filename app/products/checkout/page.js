@@ -1,3 +1,4 @@
+'use client';
 import { useRouter } from 'next/router';
 // src/pages/checkout.js
 import React, { useState } from 'react';

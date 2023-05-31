@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
                 <Link href="/contact">Contact</Link>
                 <Link href="/about">About</Link>
                 <div className={styles.topnavr}>
-                  <Link href="/cart">Cart</Link>
+                  <Link href="/products/cart">Cart</Link>
                 </div>
               </div>
             </li>

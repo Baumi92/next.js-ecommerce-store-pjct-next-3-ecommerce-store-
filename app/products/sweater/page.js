@@ -5,7 +5,7 @@ export default function SweaterPage() {
     <main>
       <div className={styles.h1}> Sweater</div>
       <div className={styles.picture}>
-        <img src="/sweater.png" alt="showing sweater" height="500" />
+        <img src="images/sweater.png" alt="showing sweater" height="500" />
         <input
           type="number"
           data-test-id="product-quantity"
