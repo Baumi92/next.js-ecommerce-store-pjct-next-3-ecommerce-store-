@@ -19,9 +19,17 @@ const equipments: Equipment[] = [
     alt: 'equipment',
   },
 
-  { id: 3, name: 'compass', img: '/images2/compass.jpg', alt: 'equipment' },
+  { id: 3,
+    name: 'compass',
+     img: '/images2/compass.jpg',
+      alt: 'equipment'
+    },
 
-  { id: 4, name: 'backpack', img: '/images2/backpack.jpg', alt: 'equipment' },
+  { id: 4,
+     name: 'backpack',
+      img: '/images2/backpack.jpg',
+       alt: 'equipment'
+      },
 ];
 
 export function getEquipmentById(id: number) {

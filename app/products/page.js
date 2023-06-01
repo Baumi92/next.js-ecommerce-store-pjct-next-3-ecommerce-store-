@@ -34,8 +34,7 @@ export default function ProductPage() {
                 height={300}
               />
               <div>
-                <span>Product Price</span>
-                <p> Hello here should be a text</p>
+                <p className={styles.p}> Hello here should be a text</p>
               </div>
             </div>
           );

@@ -35,7 +35,8 @@ export default function ProductPage({ params }) {
           height={300}
         />
         <div className={styles.product}>
-          This are {singleProduct.type} and {singleProduct.accessory}
+          This are {singleProduct.type} and the best price is
+          {singleProduct.price}
         </div>
         <button>Add to Cart</button>
         <Link href="/products/checkout/">Go To</Link>

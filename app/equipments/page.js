@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getEquipmentById } from '../../database/equipment';
 import styles from './page.module.scss';
 
 const equipments = [
@@ -37,7 +36,7 @@ export default function EquipmentPage() {
       </div>
       <main className={styles.main}>
         {equipments.map((equipment) => (
-          <div key={`equipment-div-${equipment.id}`}>
+          <div className={styles.column} key={`equipment-div-${equipment.id}`}>
             <Link href={`/equipments/${equipment.id}`}>
               <h1 className={styles.h1}>
                 <Image

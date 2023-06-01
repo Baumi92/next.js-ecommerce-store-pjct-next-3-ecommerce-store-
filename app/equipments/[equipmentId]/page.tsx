@@ -10,6 +10,7 @@ type Props = {
 export default function EquipmentPage(props: Props) {
   console.log(props);
   const equipment = getEquipmentById(Number(props.params.equipmentId));
+  const singleEquipment = getEquipmentById(Number(props.params.equipmentId)); // convert the string into a number;
 
   if (!equipment) {
     notFound();
@@ -27,7 +28,16 @@ export default function EquipmentPage(props: Props) {
       >
         <Image src="/riverview.jpg" alt="river" layout="fill" />
       </div>
-      <div className={styles.h1}>single page for {equipment.id}</div>
+      <div className={styles.h1}>single page for {equipment.name}</div>
+      <div>
+        <h1 className={styles.h1}> {equipment.name}</h1>
+        <Image
+          src={`/public/images2/${equipment.name}.jpg`}
+          width={300}
+          height={300}
+          alt="Equipment"
+        />
+      </div>
     </main>
   );
 }

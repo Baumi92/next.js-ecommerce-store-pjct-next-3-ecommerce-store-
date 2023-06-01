@@ -10,6 +10,7 @@ export const products = [
     accessory: 'clothes',
     img: '/images/shoe.png',
     alt: 'Clothes',
+    price: '99€',
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const products = [
     accessory: 'Soft',
     img: '/images/trouser.png',
     alt: 'Clothes',
+    price: '49€',
   },
   {
     id: 3,
