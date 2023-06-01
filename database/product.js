@@ -5,7 +5,7 @@ fs.readFile('../app/page.js', () => {});
 export const products = [
   {
     id: 1,
-    name: 'shoe',
+    name: 'Shoe',
     type: 'Shoes',
     accessory: 'clothes',
     img: '/images/shoe.png',
@@ -13,7 +13,7 @@ export const products = [
   },
   {
     id: 2,
-    name: 'trouser',
+    name: 'Trouser',
     type: 'trousers',
     accessory: 'biscuit',
     img: '/images/trouser.png',
@@ -21,7 +21,7 @@ export const products = [
   },
   {
     id: 3,
-    name: 'jacket',
+    name: 'Jacket',
     type: 'jackets',
     accessory: 'candy',
     img: '/images/jacket.png',
@@ -29,7 +29,7 @@ export const products = [
   },
   {
     id: 4,
-    name: 'sweater',
+    name: 'Sweater',
     type: 'sweaters',
     accessory: 'band',
     img: '/images/sweater.png',
@@ -37,6 +37,6 @@ export const products = [
   },
 ];
 
-export function getProductById(name) {
-  return products.find((product) => product.id === name);
+export function getProductById(id) {
+  return products.find((product) => product.id === id);
 }

@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -98,7 +96,7 @@ export default function ShoePage() {
             height="500"
           />
           <div className={styles.button}>
-            <span data-test-id="product-price ">{price}</span>
+            <span data-test-id="product-price €">{price}</span>
             <div>
               <input
                 onClick={handleQuantityChange}
@@ -121,14 +119,10 @@ export default function ShoePage() {
                 </Link>
               </div>
               <div>
-                {' '}
-                <Link href="/products/thankyou">
-                  <button>thank you</button>
-                </Link>
+                <Link href="/products/thankyou"></Link>
               </div>
             </div>
           </div>
-          <div></div>
           <div className={styles.h2}>
             <h2> Key Facts</h2>
             <p> Here should be a Text </p>

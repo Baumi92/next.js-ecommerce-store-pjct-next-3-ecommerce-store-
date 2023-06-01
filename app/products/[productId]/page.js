@@ -1,13 +1,12 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
 import { getProductById } from '../../../database/product';
+import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export default function ProductByIdPage({ params }) {
-  
-
-  const singleProduct = getProductById(params.productById);
+export default function ProductPage({ params }) {
+  const singleProduct = getProductById(Number(params.productId)); // Convert the string in to a number
 
   console.log(singleProduct);
 
@@ -26,14 +25,15 @@ export default function ProductByIdPage({ params }) {
       >
         <Image src="/riverview.jpg" alt="showing river" layout="fill" />
       </div>
-      <main>
-        <h1> {singleProduct.name}</h1>
+      <main className={styles.main}>
+        <h1 className={styles.h1}> {singleProduct.name}</h1>
         <Image
           src={`/images/${singleProduct.name}.png`}
           width={300}
           height={300}
         />
-        This is a {singleProduct.type} product page {singleProduct.accessory}
+        This is are {singleProduct.type} and {singleProduct.accessory}
+        <button>Add to Cart</button>
       </main>
     </>
   );

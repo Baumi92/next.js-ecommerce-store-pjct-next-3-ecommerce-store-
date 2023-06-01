@@ -1,13 +1,12 @@
+import Image from 'next/image';
+import styles from './page.module.scss';
+
 export default function ThankyouPage() {
   return (
     <main>
-      <div> Thankyou</div>
-      <div>
-        <img
-          src="public/images/sweater.png"
-          alt="showing sweater"
-          height="500"
-        />
+      <div className={styles.h1}> Thank You for your Purchase</div>
+      <div className={styles.h1}>
+        <Image src="/images/lauthorn.suisse.jpg" height={400} width={400} />
       </div>
     </main>
   );

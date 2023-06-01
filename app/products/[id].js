@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 // src/pages/products/[id].js
 import React, { useState } from 'react';
-import { useCart } from '../components/useCart';
+import { useCart } from './cart/useCart';
 
 const SingleProductPage = () => {
   const router = useRouter();

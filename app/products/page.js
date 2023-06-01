@@ -27,7 +27,7 @@ export default function ProductPage() {
         {products.map((product) => {
           return (
             <div className={styles.column} key={`product-div-${product.id}`}>
-              <Link href={`/products/${product.name}`}>{product.name}</Link>
+              <Link href={`/products/${product.id}`}>{product.name}</Link>
               <Image
                 src={`/images/${product.name}.png`}
                 width={300}

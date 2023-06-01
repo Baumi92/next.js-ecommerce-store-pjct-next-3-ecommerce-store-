@@ -5,6 +5,6 @@ export const rootNotFoundMetadata = {
   description: "Sorry cant't find the page you'r looking for",
 };
 
-export default function RootNotFound() {
+export default function PageNotFound() {
   return <div className={styles.h1}>Sorry this page was not found</div>;
 }

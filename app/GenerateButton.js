@@ -7,7 +7,7 @@ export default function GenerateButton() {
       className={styles.GenerateButton}
       onClick={() => console.log('generate')}
     >
-      Get a look
+      Add to Cart
     </button>
   );
 }

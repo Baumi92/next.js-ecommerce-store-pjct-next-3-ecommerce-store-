@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { useCart } from '../../components/useCart';
+import { useCart } from './useCart';
 
 export default function CartPage() {
   const { cart, removeFromCart, cartTotal } = useCart();
