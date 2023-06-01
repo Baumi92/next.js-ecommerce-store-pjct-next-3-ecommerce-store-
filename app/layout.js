@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
                   Home
                 </a>
                 <Link href="/products">Products</Link>
+                <Link href="/equipments">Equipments</Link>
                 <Link href="/news">News</Link>
                 <Link href="/contact">Contact</Link>
                 <Link href="/about">About</Link>

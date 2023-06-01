@@ -1,5 +1,6 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getProductById } from '../../../database/product';
 import styles from './page.module.scss';
 
@@ -23,8 +24,9 @@ export default function ProductPage({ params }) {
           height: '100vh',
         }}
       >
-        <Image src="/riverview.jpg" alt="showing river" layout="fill" />
+        <Image src="/riverview.jpg" alt="river" layout="fill" />
       </div>
+
       <main className={styles.main}>
         <h1 className={styles.h1}> {singleProduct.name}</h1>
         <Image
@@ -32,8 +34,14 @@ export default function ProductPage({ params }) {
           width={300}
           height={300}
         />
-        This is are {singleProduct.type} and {singleProduct.accessory}
+        <div className={styles.product}>
+          This are {singleProduct.type} and {singleProduct.accessory}
+        </div>
         <button>Add to Cart</button>
+        <Link href="/products/checkout/">Go To</Link>
+        <button>
+          <Link href="/equipments/"> Check out also </Link>
+        </button>
       </main>
     </>
   );

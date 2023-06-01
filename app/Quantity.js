@@ -17,7 +17,7 @@ const cartService = {
   },
 };
 
-export default function ShoePage() {
+export default function Quantity() {
   const [quantity, setQuantity] = useState(1);
   const [isInCart, setIsInCart] = useState(false);
   const [price, setPrice] = useState(99.0);
