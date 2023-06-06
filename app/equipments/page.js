@@ -1,27 +1,12 @@
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
+import { equipments } from '../../database/equipment';
 import styles from './page.module.scss';
 
-const equipments = [
-  {
-    id: 1,
-    name: 'walking stick',
-    img: '/images2/bergschuhe.jpg',
-    alt: 'equipment',
-  },
-  {
-    id: 2,
-    name: 'outdoor watch',
-    img: '/images2/outdoorwatch.jpg',
-    alt: 'equipment',
-  },
-
-  { id: 3, name: 'compass', img: '/images2/compass.jpg', alt: 'equipment' },
-
-  { id: 4, name: 'backpack', img: '/images2/backpack.jpg', alt: 'equipment' },
-];
-
 export default function EquipmentPage() {
+  const allCookies = cookies().getAll();
+  console.log(allCookies);
   return (
     <>
       <div

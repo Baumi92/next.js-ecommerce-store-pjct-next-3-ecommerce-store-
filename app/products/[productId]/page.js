@@ -2,6 +2,7 @@ import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductById } from '../../../database/product';
+import Quantity from '../../components/Quantity';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -34,6 +35,7 @@ export default function ProductPage({ params }) {
           width={300}
           height={300}
         />
+        <Quantity />
         <div className={styles.product}>
           This are {singleProduct.type} and the best price is
           {singleProduct.price}

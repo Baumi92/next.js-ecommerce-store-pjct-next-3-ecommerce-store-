@@ -3,33 +3,40 @@ type Equipment = {
   name: string;
   img: string;
   alt: string;
+  price: number;
 };
 
-const equipments: Equipment[] = [
+export const equipments: Equipment[] = [
   {
     id: 1,
     name: 'walking stick',
-    img: '/images2/walkingstick.jpg',
+    img: '/images2/walkingstick2.jpg',
     alt: 'equipment',
+    price: 50,
   },
   {
     id: 2,
     name: 'outdoor watch',
     img: '/images2/outdoorwatch.jpg',
     alt: 'equipment',
+    price: 150,
   },
 
-  { id: 3,
+  {
+    id: 3,
     name: 'compass',
-     img: '/images2/compass.jpg',
-      alt: 'equipment'
-    },
+    img: '/images2/compass.jpg',
+    alt: 'equipment',
+    price: 33,
+  },
 
-  { id: 4,
-     name: 'backpack',
-      img: '/images2/backpack.jpg',
-       alt: 'equipment'
-      },
+  {
+    id: 4,
+    name: 'backpack',
+    img: '/images2/backpack.jpg',
+    alt: 'equipment',
+    price: 120,
+  },
 ];
 
 export function getEquipmentById(id: number) {

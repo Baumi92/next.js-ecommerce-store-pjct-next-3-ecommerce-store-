@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getLocalStorage, setLocalStorage } from '../util/localStorage';
+import { getLocalStorage, setLocalStorage } from '../../util/localStorage';
 import style from './CookieBanner.module.scss';
 
 export function CookieBanner() {
