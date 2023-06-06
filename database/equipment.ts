@@ -9,22 +9,22 @@ type Equipment = {
 export const equipments: Equipment[] = [
   {
     id: 1,
-    name: 'walking stick',
+    name: 'Walking-stick',
     img: '/images2/walkingstick2.jpg',
     alt: 'equipment',
     price: 50,
   },
   {
     id: 2,
-    name: 'outdoor watch',
-    img: '/images2/outdoorwatch.jpg',
+    name: 'Outdoor watch',
+    img: '/images2/watch2.jpg',
     alt: 'equipment',
     price: 150,
   },
 
   {
     id: 3,
-    name: 'compass',
+    name: 'Compass',
     img: '/images2/compass.jpg',
     alt: 'equipment',
     price: 33,
@@ -32,7 +32,7 @@ export const equipments: Equipment[] = [
 
   {
     id: 4,
-    name: 'backpack',
+    name: 'Backpack',
     img: '/images2/backpack.jpg',
     alt: 'equipment',
     price: 120,

@@ -33,7 +33,7 @@ export default function EquipmentPage(props: Props) {
         <div>
           <h1 className={styles.h1}> {equipment.name}</h1>
           <Image
-            src={`/../public/images2/${equipment.name}.jpg`}
+            src={`/images2/${equipment.name}.jpg`}
             width={300}
             height={300}
             alt="Equipment"
