@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import styles from './page.module.scss';
 
 export default function CartPage() {
   return (
@@ -14,7 +16,14 @@ export default function CartPage() {
       >
         <Image src="/Riverview.jpg" alt="showing River" fill />
       </div>
-      <main> Cartpage</main>
+      <main>
+        <div>
+          <h1 className={styles.h1}> CartPage</h1>
+          <Link href="/checkout/">
+            <button>checkout</button>
+          </Link>
+        </div>
+      </main>
     </>
   );
 }

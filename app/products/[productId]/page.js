@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getProductById } from '../../../database/product';
 import Quantity from '../../components/Quantity';
+import EquipmentCommentForm from '../../equipments/[equipmentId]/EquipmentCommentForm';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -46,6 +47,7 @@ export default function ProductPage({ params }) {
           <Link href="/equipments/"> Check out also </Link>
         </button>
       </main>
+      <EquipmentCommentForm />
     </>
   );
 }
