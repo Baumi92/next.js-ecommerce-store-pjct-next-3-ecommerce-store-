@@ -17,7 +17,7 @@ export default function EquipmentPage() {
           height: '100vh',
         }}
       >
-        <Image src="/riverview.jpg" alt="river" layout="fill" />
+        <Image src="/riverview.jpg" alt="river" fill />
       </div>
       <main className={styles.main}>
         {equipments.map((equipment) => (

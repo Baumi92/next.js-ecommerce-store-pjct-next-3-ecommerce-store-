@@ -12,14 +12,14 @@ export default function ContactPage() {
           height: '100vh',
         }}
       >
-        <Image src="/Steinkreis.jpg" alt="mountainview" layout="fill" />
+        <Image src="/Steinkreis.jpg" alt="mountainview" fill />
       </div>
       <main>
         <div className={styles.h1}> How to contact us</div>
 
         <div className={styles.adress}>
-          Contact Us WildGear 123 Adventure Avenue Vienna, 1010 Austria
-          E-mail buxdiehude@gmail.com  Phone: 06646666666
+          Contact Us WildGear 123 Adventure Avenue Vienna, 1010 Austria E-mail
+          buxdiehude@gmail.com Phone: 06646666666
         </div>
       </main>
     </>

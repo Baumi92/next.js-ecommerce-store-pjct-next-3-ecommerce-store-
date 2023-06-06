@@ -26,7 +26,7 @@ export default function EquipmentPage(props: Props) {
           height: '100vh',
         }}
       >
-        <Image src="/riverview.jpg" alt="river" layout="fill" />
+        <Image src="/riverview.jpg" alt="river" fill />
       </div>
       <main className={styles.main}>
         <div className={styles.h1}>single page for {equipment.id}</div>

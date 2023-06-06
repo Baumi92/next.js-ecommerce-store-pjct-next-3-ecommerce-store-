@@ -1,6 +1,7 @@
 import './globals.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { CookieBanner } from './components/CookieBanner';
 import styles from './page.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -27,13 +28,14 @@ export default function RootLayout({ children }) {
                 <Link href="/contact">Contact</Link>
                 <Link href="/about">About</Link>
                 <div className={styles.topnavr}>
-                  <Link href="/products/cart">Cart</Link>
+                  <Link href="/cart">Cart</Link>
                 </div>
               </div>
             </li>
           </ul>
         </nav>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

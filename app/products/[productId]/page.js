@@ -25,7 +25,7 @@ export default function ProductPage({ params }) {
           height: '100vh',
         }}
       >
-        <Image src="/riverview.jpg" alt="river" layout="fill" />
+        <Image src="/riverview.jpg" alt="river" fill />
       </div>
 
       <main className={styles.main}>
@@ -41,7 +41,7 @@ export default function ProductPage({ params }) {
           {singleProduct.price}
         </div>
         <button>Add to Cart</button>
-        <Link href="/products/checkout/">Go To</Link>
+        <Link href="/checkout/">Go To</Link>
         <button>
           <Link href="/equipments/"> Check out also </Link>
         </button>

@@ -12,7 +12,7 @@ export default function NewsPage() {
           height: '100vh',
         }}
       >
-        <Image src="/Berge.jpg" alt="showing desert" layout="fill" />
+        <Image src="/Berge.jpg" alt="showing desert" fill />
       </div>
       <main>
         <div className={styles.h1}> Newsletter</div>
