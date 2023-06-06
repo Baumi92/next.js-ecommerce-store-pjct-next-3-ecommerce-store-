@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { createOrUpdateComment } from './action';
 
-export default function EquipmentCommentForm() {
+export default function EquipmentCommentForm(props) {
   const [comment, setComment] = useState('');
 
   return (
@@ -16,7 +16,7 @@ export default function EquipmentCommentForm() {
       />
       <button
         formAction={async () => {
-          createOrUpdateComment(comment);
+          await createOrUpdateComment(props.equipmentId, comment);
         }}
       >
         Update Comment
