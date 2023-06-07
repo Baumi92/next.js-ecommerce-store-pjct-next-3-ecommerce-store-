@@ -1,10 +1,9 @@
 'use client';
-import { useRouter } from 'next/router';
+
 // src/pages/checkout.js
 import React, { useState } from 'react';
 
-const CheckoutPage = () => {
-  const router = useRouter();
+const Checkouthandler = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,8 +18,7 @@ const CheckoutPage = () => {
   });
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
+    const { name, value } = setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -29,7 +27,6 @@ const CheckoutPage = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // Implement form submission and order confirmation
-    router.push('/thankyou');
   };
 
   return (
@@ -63,4 +60,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default Checkouthandler;
