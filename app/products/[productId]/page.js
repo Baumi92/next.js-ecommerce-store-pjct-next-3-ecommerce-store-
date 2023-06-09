@@ -41,11 +41,8 @@ export default function ProductPage({ params }) {
           This are {singleProduct.type} and the best price is
           {singleProduct.price}
         </div>
-        <button>Add to Cart</button>
-        <Link href="/checkout/">Go To</Link>
-        <button>
-          <Link href="/equipments/"> Check out also </Link>
-        </button>
+
+        <Link href="/equipments/"> Check out also </Link>
       </main>
       <EquipmentCommentForm />
     </>

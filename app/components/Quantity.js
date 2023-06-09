@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import { product } from '../migrations/1684917283-insertProducts';
 
 export const metadata = {
   title: 'Shoe Page',
@@ -88,12 +89,9 @@ export default function Quantity() {
               Add to Cart
             </button>
             <div>
-              <Link href="/products/cart">
+              <Link href="/cart/">
                 <button>Go to Cart</button>
               </Link>
-            </div>
-            <div>
-              <Link href="/products/thankyou"></Link>
             </div>
           </div>
         </div>
