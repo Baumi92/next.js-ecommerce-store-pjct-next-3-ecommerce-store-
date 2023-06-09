@@ -2,7 +2,15 @@ import fs from 'node:fs';
 
 fs.readFile('../app/page.js', () => {});
 
-export const products = [
+type Products = {
+  id: number;
+  name: string;
+  accessory: string;
+  img: string;
+  alt: string;
+  price: string;
+};
+export const products: Products[] = [
   {
     id: 1,
     name: 'Shoe',

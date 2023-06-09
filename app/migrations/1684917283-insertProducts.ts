@@ -15,7 +15,7 @@ export const product = [
     accessory: 'robust',
     img: '/images/shoe.png',
     alt: 'Clothes',
-    price: '99€',
+    price: '100€',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const product = [
     accessory: 'Soft',
     img: '/images/trouser.png',
     alt: 'Clothes',
-    price: '49€',
+    price: '80€',
   },
   {
     id: 3,
@@ -33,6 +33,7 @@ export const product = [
     accessory: 'endurable',
     img: '/images/jacket.png',
     alt: 'Clothes',
+    price: '120€',
   },
   {
     id: 4,
@@ -41,6 +42,7 @@ export const product = [
     accessory: 'Cozy',
     img: '/images/sweater.png',
     alt: 'Clothes',
+    price: '50€',
   },
 ];
 
@@ -50,7 +52,7 @@ export async function up(sql: Sql) {
     INSERT INTO products
       (name, type, accessory)
     VALUES
-    (${product.name}, ${product.type}, ${product.accessory})
+    (${products.name}, ${products.type}, ${products.accessory})
   `;
   }
 }
