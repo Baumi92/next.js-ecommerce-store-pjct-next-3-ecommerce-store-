@@ -8,10 +8,10 @@ config();
 // Next.js fast refresh increases database connection slot
 // and causes connection slot error
 // export const sql = postgres({
-//   transform: {
-//     ...postgres.camel,
-//     undefined: null,
-//   },
+//  transform: {
+//    ...postgres.camel,
+//    undefined: null,
+//  },
 // });
 
 declare module globalThis {

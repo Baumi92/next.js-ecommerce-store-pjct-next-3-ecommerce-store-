@@ -8,10 +8,9 @@ import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export default function ProductPage({ params }) {
-  const singleProduct = getProductById(Number(params.productId)); // Convert the string in to a number
-
-  console.log(singleProduct);
+export default async function ProductPage({ params }) {
+  // const singleProduct = getProductById(Number(params.productId)); // Convert the string in to a number
+  const singleProduct = await getProductById(Number(params.productId));
 
   if (!singleProduct) {
     notFound();

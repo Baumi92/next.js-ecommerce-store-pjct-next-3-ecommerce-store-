@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/product';
+import { getProducts } from '../../database/product';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -8,7 +8,9 @@ export const metadata = {
   description: 'My favorite products',
 };
 
-export default function ProductPage() {
+export default async function ProductPage() {
+  const products = await getProducts();
+
   return (
     <>
       <div
