@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { product } from '../migrations/1684917283-insertProducts';
 
 export const metadata = {
   title: 'Shoe Page',
