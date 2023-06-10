@@ -34,12 +34,11 @@ export default async function EquipmentPage(props: Props) {
         <Image src="/riverview.jpg" alt="river" fill />
       </div>
       <main className={styles.main}>
-        <div className={styles.h1}>single page for {singleEquipment.id}</div>
         <div>
           <h1 className={styles.h1}> {singleEquipment.name}</h1>
           <Image
             src={`/images2/${singleEquipment.name}.jpg`}
-            width={300}
+            width={400}
             height={300}
             alt="Equipment"
           />
