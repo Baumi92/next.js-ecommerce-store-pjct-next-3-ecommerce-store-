@@ -1,12 +1,13 @@
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
-import { equipments } from '../../database/equipment';
+import { getEquipments } from '../../database/equipment';
 import styles from './page.module.scss';
 
-export default function EquipmentPage() {
+export default async function EquipmentPage() {
   const allCookies = cookies().getAll();
   console.log(allCookies);
+  const equipments = await getEquipments();
   return (
     <>
       <div

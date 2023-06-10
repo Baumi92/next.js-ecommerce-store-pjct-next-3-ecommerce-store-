@@ -9,10 +9,15 @@ type Props = {
   params: { equipmentId: string };
 };
 
-export default function EquipmentPage(props: Props) {
-  const equipment = getEquipmentById(Number(props.params.equipmentId));
+export const dynamic = 'force-dynamic';
 
-  if (!equipment) {
+export default async function EquipmentPage(props: Props) {
+  // const equipment = getEquipmentById(Number(props.params.equipmentId));
+  const singleEquipment = await getEquipmentById(
+    Number(props.params.equipmentId),
+  );
+
+  if (!singleEquipment) {
     notFound();
   }
 
@@ -29,11 +34,11 @@ export default function EquipmentPage(props: Props) {
         <Image src="/riverview.jpg" alt="river" fill />
       </div>
       <main className={styles.main}>
-        <div className={styles.h1}>single page for {equipment.id}</div>
+        <div className={styles.h1}>single page for {singleEquipment.id}</div>
         <div>
-          <h1 className={styles.h1}> {equipment.name}</h1>
+          <h1 className={styles.h1}> {singleEquipment.name}</h1>
           <Image
-            src={`/images2/${equipment.name}.jpg`}
+            src={`/images2/${singleEquipment.name}.jpg`}
             width={300}
             height={300}
             alt="Equipment"
@@ -42,7 +47,7 @@ export default function EquipmentPage(props: Props) {
 
         <Quantity />
       </main>
-      <EquipmentCommentForm equipmentId={equipment.id} />;
+      <EquipmentCommentForm equipmentId={singleEquipment.id} />;
     </>
   );
 }
