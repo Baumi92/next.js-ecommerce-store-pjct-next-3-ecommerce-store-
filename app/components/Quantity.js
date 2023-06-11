@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -18,42 +19,42 @@ const cartService = {
 
 export default function Quantity() {
   const [quantity, setQuantity] = useState(1);
+  const [cartQuantity, setCartQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
   const [isInCart, setIsInCart] = useState(false);
-  const [price, setPrice] = useState('');
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   const handleQuantityChange = (event) => {
     let newQuantity = parseInt(event.target.value);
-    if (newQuantity >= 1) {
-      setQuantity(newQuantity);
-    }
     if (isNaN(newQuantity) || newQuantity < 1) {
       newQuantity = 1;
     }
-    if (newQuantity < 1) {
-      newQuantity = 1;
-    }
-    setQuantity(newQuantity);
+    setSelectedQuantity(newQuantity);
     setPrice(newQuantity * price);
   };
+
   const handleIncreaseQuantity = () => {
-    setQuantity(quantity + 1);
-    setPrice((quantity + 1) * price);
+    setQuantity((prevQuantity) => prevQuantity + 1);
+    setPrice((price) => (quantity + 1) * price);
   };
 
   const handleDecreaseQuantity = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
-      setPrice((quantity - 1) * price);
+      setQuantity((prevQuantity) => prevQuantity - 1);
+      setPrice((price) => (quantity - 1) * price);
     }
   };
 
   const handleAddToCart = () => {
     if (quantity <= 0) {
-      alert('Please enter a valid quantity.');
       return;
     }
 
+    // Update the cart quantity
+    setCartQuantity((prevQuantity) => prevQuantity + selectedQuantity);
+
     // Add the quantity to the cart
+    cartService.addToCart({ name: 'Product Name', quantity: selectedQuantity });
 
     setIsInCart(true);
     alert('Product added to cart!');
@@ -70,33 +71,33 @@ export default function Quantity() {
     <main>
       <div>
         <div>
-          <span data-test-id="product-price €">{price}</span>
+          <span data-test-id="product-price">€{price}</span>
           <div>
+            <button onClick={handleDecreaseQuantity}>-</button>
             <input
-              onClick={handleQuantityChange}
               type="number"
               data-test-id="product-quantity"
               value={quantity}
               min="1"
               onChange={handleQuantityChange}
             />
-            <button onClick={handleRemoveFromCart}>Remove from Cart</button>
-            <button
-              onClick={handleAddToCart}
-              data-test-id="product-add-to-cart"
-            >
-              Add to Cart
-            </button>
+            <button onClick={handleIncreaseQuantity}>+</button>
+            {isInCart ? (
+              <button onClick={handleRemoveFromCart}>Remove from Cart</button>
+            ) : (
+              <button
+                onClick={handleAddToCart}
+                data-test-id="product-add-to-cart"
+              >
+                Add to Cart
+              </button>
+            )}
             <div>
-              <Link href="/cart/">
+              <Link href="/cart">
                 <button>Go to Cart</button>
               </Link>
             </div>
           </div>
-        </div>
-        <div>
-          <h2> Key Facts</h2>
-          <p> Here should be a Text </p>
         </div>
       </div>
     </main>

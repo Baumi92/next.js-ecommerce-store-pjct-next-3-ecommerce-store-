@@ -1,8 +1,5 @@
-import fs from 'node:fs';
 import { cache } from 'react';
 import { sql } from './connect';
-
-fs.readFile('../app/page.js', () => {});
 
 type Product = {
   id: number;
