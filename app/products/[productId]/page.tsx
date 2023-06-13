@@ -11,14 +11,11 @@ type Props = {
 export const dynamic = 'force-dynamic';
 
 export default async function ProductPage(props: Props) {
-  // const singleProduct = getProductById(Number(params.productId)); // Convert the string in to a numbe
   const singleProduct = await getProductById(Number(props.params.productId));
 
   if (!singleProduct) {
     notFound();
   }
-
-  const formattedPrice = parseFloat(singleProduct.price).toFixed(2);
 
   return (
     <>
@@ -33,19 +30,25 @@ export default async function ProductPage(props: Props) {
         <Image src="/riverview.jpg" alt="river" fill />
       </div>
 
-      <main>
-        <h1 className={styles.h1}> {singleProduct.name}</h1>
-        <Image
-          src={`/images/${singleProduct.name}.png`}
-          width={300}
-          height={300}
-          alt="Product"
-        />
-        <Quantity product={formattedPrice} />
-        <div className={styles.product}>
-          This are {singleProduct.type} and the best price is
-          {singleProduct.price}
-        </div>
+      <main className={styles.main}>
+        {singleProduct ? (
+          <>
+            <h1 className={styles.h1}> {singleProduct.name}</h1>
+            <Image
+              src={`/images/${singleProduct.name}.png`}
+              width={300}
+              height={300}
+              alt="Product"
+            />
+            <Quantity product={singleProduct} />
+            <div className={styles.product}>
+              This are {singleProduct.type} and the best price is
+              {singleProduct.price}
+            </div>
+          </>
+        ) : (
+          <div>Loading...</div>
+        )}
       </main>
     </>
   );

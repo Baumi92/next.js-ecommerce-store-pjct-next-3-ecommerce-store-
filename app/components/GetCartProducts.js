@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './GetCartProduct.module.scss';
@@ -12,15 +14,44 @@ const cartService = {
         accessory: 'clothes',
         img: '/images/shoe.png',
         alt: 'Clothes',
-        price: '99€',
+        price: 99,
         quantity: 1,
       },
-      // Rest of the cart products
+      {
+        id: 2,
+        name: 'Trouser',
+        type: 'trousers',
+        accessory: 'Soft',
+        img: '/images/trouser.png',
+        alt: 'Clothes',
+        price: 50,
+        quantity: 1,
+      },
+      {
+        id: 3,
+        name: 'Jacket',
+        type: 'jackets',
+        accessory: 'endurable',
+        img: '/images/jacket.png',
+        alt: 'Clothes',
+        price: 120,
+        quantity: 1,
+      },
+      {
+        id: 4,
+        name: 'Sweater',
+        type: 'sweaters',
+        accessory: 'cozy',
+        img: '/images/sweater.png',
+        alt: 'Clothes',
+        price: 149,
+        quantity: 1,
+      },
     ];
   },
 };
 
-export default function CartPage() {
+export default function GetCartProduct() {
   const [cartProducts, setCartProducts] = useState(
     cartService.getCartProducts(),
   );
@@ -49,7 +80,6 @@ export default function CartPage() {
   return (
     <main>
       <div>
-        <h1 className={styles.h1}>CartPage</h1>
         <ul>
           {cartProducts.map((product) => (
             <li
@@ -57,9 +87,9 @@ export default function CartPage() {
               data-test-id={`cart-product-${product.id}`}
             >
               <span>{product.name}</span>
-              <span>{product.price}</span>
+
               <span data-test-id={`cart-product-quantity-${product.id}`}>
-                {product.quantity}
+                {product.price}
               </span>
               <button
                 onClick={() => handleRemoveFromCart(product.id)}

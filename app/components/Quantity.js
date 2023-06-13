@@ -14,12 +14,12 @@ const cartService = {
   cartProducts: [],
   addToCart: (product, quantity) => {
     // Simulate adding the product to the cart
-    const existingProduct = cartService.cartProducts.find(
+    const singleProduct = cartService.cartProducts.find(
       (item) => item.id === product.id,
     );
 
-    if (existingProduct) {
-      existingProduct.quantity += quantity;
+    if (singleProduct) {
+      singleProduct.quantity += quantity;
     } else {
       cartService.cartProducts.push({
         ...product,
@@ -39,13 +39,13 @@ const cartService = {
   },
 };
 
-export default function Quantity({ product }) {
+export default function Quantity({ product, onQuantityChange }) {
   const [quantity, setQuantity] = useState(1);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [isInCart, setIsInCart] = useState(false);
-  const [selectedQuantity, setSelectedQuantity] = useState(2);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
   const [price, setPrice] = useState(0);
-
+  const productPrice = 99;
   const [cookies, setCookie] = useCookies(['productQuantity', 'productPrice']);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function Quantity({ product }) {
     if (storedPrice) {
       setPrice(parseFloat(storedPrice));
     }
-  }, [cookies]);
+  }, []);
 
   // Update the product quantity and store it in the cookie
   const handleQuantityChange = (event) => {
@@ -68,10 +68,15 @@ export default function Quantity({ product }) {
       newQuantity = 1;
     }
     setSelectedQuantity(newQuantity);
-    setPrice(newQuantity * price);
+    setPrice(newQuantity * productPrice);
     setQuantity(newQuantity);
     setCookie('productQuantity', newQuantity);
-    setCookie('productPrice', price.toFixed(2));
+    setCookie('productPrice', (newQuantity * productPrice).toFixed(2));
+
+    // Call the onQuantityChange callback with the new quantity
+    if (typeof onQuantityChange === 'function') {
+      onQuantityChange(newQuantity);
+    }
   };
 
   const handleIncreaseQuantity = () => {
@@ -111,8 +116,8 @@ export default function Quantity({ product }) {
     <main>
       <div>
         <div>
-          <span data-test-id="product-price">
-            €{product * selectedQuantity}
+          <span data-test-id="product-price €">
+            €{productPrice * selectedQuantity}
           </span>
           <div>
             <button onClick={handleDecreaseQuantity}>-</button>

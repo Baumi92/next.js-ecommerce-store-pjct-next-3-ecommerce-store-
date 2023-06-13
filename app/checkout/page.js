@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
+
+const CheckoutForm = dynamic(() => import('../components/CheckoutForm'));
 
 export default function CheckoutPage() {
   return (
@@ -17,8 +20,9 @@ export default function CheckoutPage() {
       </div>
       <main>
         <h1 className={styles.h1}>CheckoutPage</h1>
+        <CheckoutForm />
         <Link href="/thankyou">
-          <button> Buy it</button>
+          <button> Go back to</button>
         </Link>
       </main>
     </>
