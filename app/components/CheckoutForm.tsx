@@ -1,3 +1,5 @@
+'use client';
+
 import { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './CheckoutForm.module.scss';
 
@@ -54,7 +56,28 @@ const CheckoutForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles['form-grid']}>
-      {/* Input fields */}
+      <input
+        type="text"
+        name="firstName"
+        placeholder="First Name"
+        value={formValues.firstName}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        value={formValues.lastName}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={formValues.email}
+        onChange={handleChange}
+      />
+      {/* Add the rest of the input fields */}
       <button type="submit" data-test-id="checkout-confirm-order">
         Confirm Order
       </button>

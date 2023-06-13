@@ -44,7 +44,7 @@ export default async function EquipmentPage(props: Props) {
           />
         </div>
 
-        <Quantity />
+        <Quantity product={singleEquipment} />
       </main>
       <EquipmentCommentForm equipmentId={singleEquipment.id} />;
     </>

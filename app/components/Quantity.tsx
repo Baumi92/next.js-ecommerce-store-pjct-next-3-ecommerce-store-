@@ -5,21 +5,32 @@ import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { getCookie } from '../../util/cookies';
 
+interface Product {
+  id: number;
+  name: string;
+  quantity: number;
+}
+
+interface QuantityProps {
+  product: Product;
+  onQuantityChange?: (quantity: number) => void;
+}
+
 export const metadata = {
   title: 'Quantity',
   description: 'Quantity',
 };
 
 const cartService = {
-  cartProducts: [],
-  addToCart: (product, quantity) => {
+  cartProducts: [] as Product[],
+  addToCart: (product: Product, quantity: number) => {
     // Simulate adding the product to the cart
-    const singleProduct = cartService.cartProducts.find(
+    const existingProduct = cartService.cartProducts.find(
       (item) => item.id === product.id,
     );
 
-    if (singleProduct) {
-      singleProduct.quantity += quantity;
+    if (existingProduct) {
+      existingProduct.quantity += quantity;
     } else {
       cartService.cartProducts.push({
         ...product,
@@ -30,7 +41,7 @@ const cartService = {
     console.log(`Adding ${product.name} to the cart with quantity ${quantity}`);
   },
 
-  removeFromCart: (product) => {
+  removeFromCart: (product: Product) => {
     // Simulate removing the product from the cart
     cartService.cartProducts = cartService.cartProducts.filter(
       (item) => item.id !== product.id,
@@ -39,13 +50,13 @@ const cartService = {
   },
 };
 
-export default function Quantity({ product, onQuantityChange }) {
-  const [quantity, setQuantity] = useState(1);
-  const [cartQuantity, setCartQuantity] = useState(0);
-  const [isInCart, setIsInCart] = useState(false);
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
-  const [price, setPrice] = useState(0);
-  const productPrice = 99;
+const Quantity: React.FC<QuantityProps> = ({ product, onQuantityChange }) => {
+  const [quantity, setQuantity] = useState<number>(1);
+  const [cartQuantity, setCartQuantity] = useState<number>(0);
+  const [isInCart, setIsInCart] = useState<boolean>(false);
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+  const [price, setPrice] = useState<number>(0);
+  const productPrice: number = 99;
   const [cookies, setCookie] = useCookies(['productQuantity', 'productPrice']);
 
   useEffect(() => {
@@ -62,7 +73,7 @@ export default function Quantity({ product, onQuantityChange }) {
   }, []);
 
   // Update the product quantity and store it in the cookie
-  const handleQuantityChange = (event) => {
+  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let newQuantity = parseInt(event.target.value);
     if (isNaN(newQuantity) || newQuantity < 1) {
       newQuantity = 1;
@@ -70,7 +81,7 @@ export default function Quantity({ product, onQuantityChange }) {
     setSelectedQuantity(newQuantity);
     setPrice(newQuantity * productPrice);
     setQuantity(newQuantity);
-    setCookie('productQuantity', newQuantity);
+    setCookie('productQuantity', newQuantity.toString());
     setCookie('productPrice', (newQuantity * productPrice).toFixed(2));
 
     // Call the onQuantityChange callback with the new quantity
@@ -98,7 +109,7 @@ export default function Quantity({ product, onQuantityChange }) {
     setCartQuantity((prevQuantity) => prevQuantity + selectedQuantity);
 
     // Add the quantity to the cart
-    cartService.addToCart({ product, selectedQuantity });
+    cartService.addToCart(product, selectedQuantity);
 
     setIsInCart(true);
     alert('Product added to cart!');
@@ -106,7 +117,7 @@ export default function Quantity({ product, onQuantityChange }) {
 
   const handleRemoveFromCart = () => {
     // Remove the product from the cart
-    cartService.removeFromCart({ name: product.name });
+    cartService.removeFromCart(product);
 
     setIsInCart(false);
     alert('Product removed from cart!');
@@ -149,4 +160,6 @@ export default function Quantity({ product, onQuantityChange }) {
       </div>
     </main>
   );
-}
+};
+
+export default Quantity;
