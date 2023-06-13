@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { cache } from 'react';
 import { sql } from './connect';
 
@@ -8,6 +9,8 @@ type Equipment = {
   alt: string;
   price: number;
 };
+fs.readFile('../app/page.js', () => {});
+
 //
 // export const equipments: Equipment[] = [
 //  {

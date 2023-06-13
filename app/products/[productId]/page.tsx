@@ -1,6 +1,5 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
-import Link from 'next/link';
 import { getProductById } from '../../../database/product';
 import Quantity from '../../components/Quantity';
 import styles from './page.module.scss';
@@ -18,6 +17,8 @@ export default async function ProductPage(props: Props) {
   if (!singleProduct) {
     notFound();
   }
+
+  const formattedPrice = parseFloat(singleProduct.price).toFixed(2);
 
   return (
     <>
@@ -40,12 +41,11 @@ export default async function ProductPage(props: Props) {
           height={300}
           alt="Product"
         />
-        <Quantity />
+        <Quantity product={formattedPrice} />
         <div className={styles.product}>
           This are {singleProduct.type} and the best price is
           {singleProduct.price}
         </div>
-        <Link href="/equipments"> Check out also </Link>
       </main>
     </>
   );

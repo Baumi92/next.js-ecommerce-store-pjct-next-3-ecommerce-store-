@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { cache } from 'react';
 import { sql } from './connect';
 
@@ -8,8 +9,9 @@ type Product = {
   accessory: string | null;
   img: string;
   alt: string;
-  price: string;
+  price: number;
 };
+fs.readFile('../app/page.js', () => {});
 
 // export const products: Product[] = [
 // {
@@ -61,7 +63,11 @@ export const getProducts = cache(async () => {
 });
 
 export const getProductById = cache(async (id: number) => {
-  const [products] = await sql<Product[]>`
+  if (!Number.isInteger(id)) {
+    throw new Error('Invalid product ID');
+  }
+
+  const [product] = await sql<Product[]>`
   SELECT
    *
   From
@@ -69,5 +75,5 @@ export const getProductById = cache(async (id: number) => {
   WHERE
   id =  ${id}
 `;
-  return products;
+  return product;
 });
