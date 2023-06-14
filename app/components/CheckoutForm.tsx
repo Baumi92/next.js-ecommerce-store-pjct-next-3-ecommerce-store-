@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './CheckoutForm.module.scss';
 
 interface FormValues {
+  number: string | number | readonly string[] | undefined;
   firstName: string;
   lastName: string;
   email: string;
@@ -28,6 +29,7 @@ const CheckoutForm: React.FC = () => {
     creditCard: '',
     expirationDate: '',
     securityCode: '',
+    number: '',
   });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -57,17 +59,29 @@ const CheckoutForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} className={styles['form-grid']}>
       <input
-        type="text"
         name="firstName"
         placeholder="First Name"
         value={formValues.firstName}
         onChange={handleChange}
       />
       <input
-        type="text"
         name="lastName"
         placeholder="Last Name"
         value={formValues.lastName}
+        onChange={handleChange}
+      />
+      <input
+        type="address"
+        name="address"
+        placeholder="Address"
+        value={formValues.address}
+        onChange={handleChange}
+      />
+      <input
+        type="number"
+        name="number"
+        placeholder="Number"
+        value={formValues.number}
         onChange={handleChange}
       />
       <input
@@ -77,10 +91,7 @@ const CheckoutForm: React.FC = () => {
         value={formValues.email}
         onChange={handleChange}
       />
-      {/* Add the rest of the input fields */}
-      <button type="submit" data-test-id="checkout-confirm-order">
-        Confirm Order
-      </button>
+      <button data-test-id="checkout-confirm-order">Confirm Order</button>
     </form>
   );
 };
