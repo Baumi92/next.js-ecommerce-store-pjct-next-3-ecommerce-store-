@@ -151,9 +151,7 @@ const Quantity: React.FC<QuantityProps> = ({ product, onQuantityChange }) => {
               </button>
             )}
             <div>
-              <Link href="/cart">
-                <button>Go to Cart</button>
-              </Link>
+              <Link href="/cart" />
             </div>
           </div>
         </div>

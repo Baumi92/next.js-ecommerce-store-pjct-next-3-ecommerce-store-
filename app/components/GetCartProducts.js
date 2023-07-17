@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import styles from './GetCartProduct.module.scss';
 
 const cartService = {
   getCartProducts: () => {
@@ -101,9 +100,7 @@ export default function GetCartProduct() {
           ))}
         </ul>
         <div data-test-id="cart-total">Total: {totalPrice}</div>
-        <Link href="/checkout">
-          <button data-test-id="cart-checkout">Buy it</button>
-        </Link>
+        <Link href="/checkout" />
       </div>
     </main>
   );
